@@ -17,9 +17,9 @@ def load_data():
 def save(name, choice, dataset):
   data = dataset
   if(choice == 'like'):
-    data['liked'].append('x')
+    data[].append(name)
   else:
-    data['disliked'].append('y')
+    data[].append(name)
   with open('data.json', 'w') as outfile:
     json.dump(data, outfile)
 
