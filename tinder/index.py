@@ -9,7 +9,7 @@ response = requests.get("https://randomuser.me/api/")
 sense.clear()
 
 jsonn = response.json()
-dictt = json.loads(jsonn)[0]
+dictt = json.loads(response)[0]
 
 # title = json[0][1][0]
 # first_name = json[0][1][1]
