@@ -24,7 +24,7 @@ while True:
     try:
         # sense.stick.direction_right = like
         # sense.stick.direction_left = dislike
-        show_name
+        sense.show_message('test')
         
     except KeyboardInterrupt:
         sense.clear()
