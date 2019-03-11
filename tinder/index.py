@@ -5,7 +5,6 @@ from random import randint
 from time import sleep
 import json
 import sys
-from collections import defaultdict
 
 sense = SenseHat()
 sense.clear()
@@ -16,10 +15,11 @@ def load_data():
         return data
 
 def save(name, choice, dataset):
-    data = defaultdict(list)
     data = dataset
     if(choice == 'like'):
-        data['liked'].append(name)
+        data['liked'].insert(0, name)
+
+        # data['liked'].append(name)
     else:
         data['disliked'].append(name)
     with open('data.json', 'w') as outfile:
