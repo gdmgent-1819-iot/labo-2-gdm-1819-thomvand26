@@ -10,9 +10,9 @@ sense.clear()
 
 json = response.json()
 # namen = data['first']
-title = json['results']['name']['title']
-first_name = json['results']['name']['first']
-last_name = json['results']['name']['last']
+title = json[0][1][0]
+first_name = json[0][1][1]
+last_name = json[0][1][2]
 
 
 
