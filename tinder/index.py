@@ -33,10 +33,11 @@ def get_user():
     first_name = jsonn['results'][0]['name']['first']
     last_name = jsonn['results'][0]['name']['last']
 
-get_user()
 
 while True:
     try:
+        get_user()
+        
         # sense.stick.direction_right = like
         # sense.stick.direction_left = dislike
         sense.show_message(title + ' ' + first_name + ' ' + last_name)
