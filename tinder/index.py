@@ -22,7 +22,7 @@ def save(name, choice, dataset):
     data['disliked'].append(name)
   with open('data.json', 'w') as outfile:
     json.dump(data, outfile)
-
+    
 def get_user():
     global name
 
@@ -36,7 +36,7 @@ def get_user():
     name = title + ' ' + first_name + ' ' + last_name
 
 
-def main():
+while True:
     try:
         data = load_data
         get_user()
@@ -55,9 +55,8 @@ def main():
             choice = 'dislike'
 
         save(name, choice, data)
-        main()
+
     except KeyboardInterrupt:
         sense.clear()
         sys.exit(0)
 
-main()
