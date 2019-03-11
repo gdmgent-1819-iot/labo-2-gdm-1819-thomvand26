@@ -8,7 +8,7 @@ sense = SenseHat()
 response = requests.get("https://randomuser.me/api/")
 sense.clear()
 
-jsonn = response.json()
+jsonn = response.json
 # dictt = json.loads(response)[0]
 # namen = data['first']
 
