@@ -6,11 +6,6 @@ import json
 
 sense = SenseHat()
 sense.clear()
-response = requests.get("https://randomuser.me/api/")
-
-title = 't'
-first_name = 'f'
-last_name = 'l'
 
 
 def like():
@@ -21,7 +16,6 @@ def show_name():
     sense.show_message('test')
 
 def get_user():
-    global response
     global title
     global first_name
     global last_name
