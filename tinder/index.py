@@ -15,7 +15,7 @@ def load_data():
     return data
 
 def save(name, choice, dataset):
-  data = {'liked', 'disliked'}
+  data = dataset
   if(choice == 'like'):
     data['liked'].append(name)
   else:
@@ -36,7 +36,7 @@ def get_user():
     name = title + ' ' + first_name + ' ' + last_name
 
 
-while True:
+def main():
     try:
         data = load_data
         get_user()
@@ -55,8 +55,9 @@ while True:
             choice = 'dislike'
 
         save(name, choice, data)
-
+        main()
     except KeyboardInterrupt:
         sense.clear()
         sys.exit(0)
 
+main()
