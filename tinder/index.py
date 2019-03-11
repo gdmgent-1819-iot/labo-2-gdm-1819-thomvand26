@@ -15,7 +15,7 @@ def load_data():
         global data_file
         data_file = json.load(json_data)
 
-def save(name, choice, dataset):
+def save(name, choice):
     # data = dataset
     global data_file
     data_file['liked'].append(name)
@@ -56,7 +56,7 @@ while True:
         else:
             choice = 'dislike'
 
-        save(name, choice, data)
+        save(name, choice)
 
     except KeyboardInterrupt:
         sense.clear()
