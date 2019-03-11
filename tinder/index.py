@@ -16,9 +16,9 @@ jsonn = response.json()
 # last_name = json[0][1][2]
 
 # namen = data['first']
-title = json['results']['name']['title']
-first_name = json['results']['name']['first']
-last_name = json['results']['name']['last']
+title = jsonn['results']['name']['title']
+first_name = jsonn['results']['name']['first']
+last_name = jsonn['results']['name']['last']
 
 
 
