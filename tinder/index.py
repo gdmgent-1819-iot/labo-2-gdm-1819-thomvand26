@@ -37,11 +37,12 @@ def get_user():
 while True:
     try:
         get_user()
-        
+
         # sense.stick.direction_right = like
         # sense.stick.direction_left = dislike
         sense.show_message(title + ' ' + first_name + ' ' + last_name)
-        # sense.show_message(str(type(jsonn)))
+        get_user()
+        sense.show_message(title + ' ' + first_name + ' ' + last_name)
 
     except KeyboardInterrupt:
         sense.clear()
