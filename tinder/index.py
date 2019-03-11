@@ -33,7 +33,7 @@ def get_user():
     # first_name = jsonn['results'][0]['name']['first']
     # last_name = jsonn['results'][0]['name']['last']
 
-    title = randint(10,20)
+    title = str(randint(10,20))
 
 
 while True:
