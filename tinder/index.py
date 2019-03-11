@@ -29,9 +29,11 @@ def get_user():
 
     response = requests.get("https://randomuser.me/api/")
 
-    title = jsonn['results'][0]['name']['title']
-    first_name = jsonn['results'][0]['name']['first']
-    last_name = jsonn['results'][0]['name']['last']
+    # title = jsonn['results'][0]['name']['title']
+    # first_name = jsonn['results'][0]['name']['first']
+    # last_name = jsonn['results'][0]['name']['last']
+
+    title = randint(10,20)
 
 
 while True:
