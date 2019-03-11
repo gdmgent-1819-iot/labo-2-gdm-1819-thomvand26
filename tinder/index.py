@@ -9,16 +9,16 @@ response = requests.get("https://randomuser.me/api/")
 sense.clear()
 
 jsonn = response.json()
-dictt = json.loads(response)[0]
+# dictt = json.loads(response)[0]
 
 # title = json[0][1][0]
 # first_name = json[0][1][1]
 # last_name = json[0][1][2]
 
 # namen = data['first']
-title = dictt['results']['name']['title']
-first_name = dictt['results']['name']['first']
-last_name = dictt['results']['name']['last']
+# title = dictt['results']['name']['title']
+# first_name = dictt['results']['name']['first']
+# last_name = dictt['results']['name']['last']
 
 
 
