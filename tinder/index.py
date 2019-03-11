@@ -10,15 +10,15 @@ sense.clear()
 
 jsonn = response.json()
 # dictt = json.loads(response)[0]
+# namen = data['first']
 
 # title = json[0][1][0]
 # first_name = json[0][1][1]
 # last_name = json[0][1][2]
 
-# namen = data['first']
-# title = dictt['results']['name']['title']
-# first_name = dictt['results']['name']['first']
-# last_name = dictt['results']['name']['last']
+title = jsonn['results']['name']['title']
+first_name = jsonn['results']['name']['first']
+last_name = jsonn['results']['name']['last']
 
 
 
@@ -33,8 +33,8 @@ while True:
     try:
         # sense.stick.direction_right = like
         # sense.stick.direction_left = dislike
-        # sense.show_message('${title} ${first_name} ${last_name}')
-        sense.show_message(str(type(jsonn)))
+        sense.show_message('${title} ${first_name} ${last_name}')
+        # sense.show_message(str(type(jsonn)))
 
     except KeyboardInterrupt:
         sense.clear()
