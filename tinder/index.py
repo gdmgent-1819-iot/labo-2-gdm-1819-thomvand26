@@ -34,7 +34,6 @@ def get_user():
     last_name = jsonn['results'][0]['name']['last']
 
     name = title + ' ' + first_name + ' ' + last_name
-    print('got user')
 
 
 
@@ -45,19 +44,17 @@ while True:
         events = sense.stick.get_events()
 
         sense.show_message(name)
-        print('showing message')
-
-
-        # if(len(events) != 0):
-        #     current_event = events[0]
-        # else:
 
         current_event = sense.stick.wait_for_event()
         
         if(current_event.direction == 'right'):
             choice = 'like'
+            sense.clear(0, 255, 0)
         else:
             choice = 'dislike'
+            sense.clear(255, 0, 0)
+
+        sleep(1)
 
         save(name, choice)
 
