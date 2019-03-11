@@ -8,11 +8,17 @@ sense = SenseHat()
 response = requests.get("https://randomuser.me/api/")
 sense.clear()
 
-json = response.json()
+jsonn = response.json()
+# dictt = json.loads(jsonn)[0]
+
+# title = json[0][1][0]
+# first_name = json[0][1][1]
+# last_name = json[0][1][2]
+
 # namen = data['first']
-title = json[0][1][0]
-first_name = json[0][1][1]
-last_name = json[0][1][2]
+title = json['results']['name']['title']
+first_name = json['results']['name']['first']
+last_name = json['results']['name']['last']
 
 
 
