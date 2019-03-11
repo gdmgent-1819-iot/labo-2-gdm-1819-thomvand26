@@ -3,22 +3,32 @@ import requests
 from random import randint
 from time import sleep
 import json
+import sys
 
 sense = SenseHat()
 sense.clear()
 
+def load_data():
+  with open('data.json') as json_data:
+    data = json.load(json_data)
+    return data
+
+def save(name, choice, dataset):
+  data = dataset
+  if(choice == 'like'):
+    data['liked'].append(name)
+  else:
+    data['disliked'].append(name)
+  with open('data.json', 'w') as outfile:
+    json.dump(data, outfile)
 
 def like():
 	sense.set_pixel(0,0, [0,255,0])
 def dislike():
 	sense.set_pixel(0,0, [255,0,0])
-def show_name():
-    sense.show_message('test')
 
 def get_user():
-    global title
-    global first_name
-    global last_name
+    global name
 
     response = requests.get("https://randomuser.me/api/")
     jsonn = response.json()
@@ -27,16 +37,30 @@ def get_user():
     first_name = jsonn['results'][0]['name']['first']
     last_name = jsonn['results'][0]['name']['last']
 
+    name = title + ' ' + first_name + ' ' + last_name
+
 
 while True:
     try:
+        data = load_data
         get_user()
+        events = sense.stick.get_events()
 
-        # sense.stick.direction_right = like
-        # sense.stick.direction_left = dislike
-        sense.show_message(title + ' ' + first_name + ' ' + last_name)
+        sense.show_message(name)
+
+        if(len(events) != 0):
+            current_event = events[0]
+        else:
+            current_event = sense.stick.wait_for_event()
+        
+        if(current_event.direction == 'right'):
+            choice = 'like'
+        else:
+            choice = 'dislike'
+
+        save(name, choice, data)
 
     except KeyboardInterrupt:
         sense.clear()
-        quit()
+        sys.exit(0)
 
