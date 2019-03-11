@@ -40,7 +40,7 @@ def get_user():
 
 while True:
     try:
-        load_data
+        load_data()
         get_user()
         events = sense.stick.get_events()
 
