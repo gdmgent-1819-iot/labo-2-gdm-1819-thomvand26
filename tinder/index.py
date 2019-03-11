@@ -1,11 +1,11 @@
 from sense_hat import SenseHat
-import requests
+# import requests
 from random import randint
 from time import sleep
 import json
 
 sense = SenseHat()
-response = requests.get("https://randomuser.me/api/")
+# response = requests.get("https://randomuser.me/api/")
 sense.clear()
 
 # data = json.loads(response)
@@ -22,9 +22,9 @@ def show_name():
 
 while True:
     try:
-        sense.stick.direction_right = like
-        sense.stick.direction_left = dislike
-        sense.stick.direction_up = show_name
+        # sense.stick.direction_right = like
+        # sense.stick.direction_left = dislike
+        sense.stick.direction_any = show_name
         
     except KeyboardInterrupt:
         sense.clear()
