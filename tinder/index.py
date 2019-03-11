@@ -15,7 +15,7 @@ def load_data():
     return data
 
 def save(name, choice, dataset):
-  data = {}
+  data = {'liked', 'disliked'}
   if(choice == 'like'):
     data['liked'].append(name)
   else:
