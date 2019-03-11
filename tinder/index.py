@@ -11,12 +11,14 @@ sense.clear()
 
 def load_data():
     with open('data.json') as json_data:
-        data = json.load(json_data)
-        return data
+        # data = json.load(json_data)
+        global data_file
+        data_file = json.load(json_data)
 
 def save(name, choice, dataset):
-    data = dataset
-    data["liked"].append(name)
+    # data = dataset
+    global data_file
+    data_file['liked'].append(name)
     # if(choice == 'like'):
     # else:
     #     data['disliked'].append(name)
@@ -38,7 +40,7 @@ def get_user():
 
 while True:
     try:
-        data = load_data
+        load_data
         get_user()
         events = sense.stick.get_events()
 
