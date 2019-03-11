@@ -8,8 +8,8 @@ sense = SenseHat()
 response = requests.get("https://randomuser.me/api/")
 sense.clear()
 
-data = json.loads(response)
-namen = data['first']
+# data = json.loads(response)
+# namen = data['first']
 
 
 
@@ -18,7 +18,7 @@ def like():
 def dislike():
 	sense.set_pixel(0,0, [255,0,0])
 def show_name():
-    sense.show_message(namen)
+    sense.show_message(str(response))
 
 while True:
     try:
