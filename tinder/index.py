@@ -36,11 +36,13 @@ def get_user():
 
 while True:
     try:
+        sense.show_message('1')
         get_user()
 
         # sense.stick.direction_right = like
         # sense.stick.direction_left = dislike
         sense.show_message(title + ' ' + first_name + ' ' + last_name)
+        sense.show_message('2')
         get_user()
         sense.show_message(title + ' ' + first_name + ' ' + last_name)
 
