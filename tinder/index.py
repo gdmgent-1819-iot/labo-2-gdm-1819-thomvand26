@@ -9,18 +9,6 @@ response = requests.get("https://randomuser.me/api/")
 sense.clear()
 
 jsonn = response.json()
-# dictt = json.loads(response)[0]
-# namen = data['first']
-
-# title = jsonn[0][1][0]
-# first_name = jsonn[0][1][1]
-# last_name = jsonn[0][1][2]
-
-title = jsonn['results'][0]['name']['title']
-first_name = jsonn['results'][0]['name']['first']
-last_name = jsonn['results'][0]['name']['last']
-
-
 
 def like():
 	sense.set_pixel(0,0, [0,255,0])
@@ -28,6 +16,15 @@ def dislike():
 	sense.set_pixel(0,0, [255,0,0])
 def show_name():
     sense.show_message('test')
+
+def get_user():
+    response = requests.get("https://randomuser.me/api/")
+
+    title = jsonn['results'][0]['name']['title']
+    first_name = jsonn['results'][0]['name']['first']
+    last_name = jsonn['results'][0]['name']['last']
+
+get_user()
 
 while True:
     try:
