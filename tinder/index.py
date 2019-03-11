@@ -12,7 +12,6 @@ title = 't'
 first_name = 'f'
 last_name = 'l'
 
-jsonn = response.json()
 
 def like():
 	sense.set_pixel(0,0, [0,255,0])
@@ -28,24 +27,19 @@ def get_user():
     global last_name
 
     response = requests.get("https://randomuser.me/api/")
+    jsonn = response.json()
 
-    # title = jsonn['results'][0]['name']['title']
-    # first_name = jsonn['results'][0]['name']['first']
-    # last_name = jsonn['results'][0]['name']['last']
-
-    title = str(randint(10,20))
+    title = jsonn['results'][0]['name']['title']
+    first_name = jsonn['results'][0]['name']['first']
+    last_name = jsonn['results'][0]['name']['last']
 
 
 while True:
     try:
-        sense.show_message('1')
         get_user()
 
         # sense.stick.direction_right = like
         # sense.stick.direction_left = dislike
-        sense.show_message(title + ' ' + first_name + ' ' + last_name)
-        sense.show_message('2')
-        get_user()
         sense.show_message(title + ' ' + first_name + ' ' + last_name)
 
     except KeyboardInterrupt:
