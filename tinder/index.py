@@ -18,7 +18,7 @@ def like():
 def dislike():
 	sense.set_pixel(0,0, [255,0,0])
 def show_name():
-    sense.show_message('test', scroll_speed = 0.01)
+    sense.show_message('test', scroll_speed = 1.0)
 
 while True:
     try:
