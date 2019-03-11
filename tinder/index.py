@@ -48,10 +48,11 @@ while True:
         print('showing message')
 
 
-        if(len(events) != 0):
-            current_event = events[0]
-        else:
-            current_event = sense.stick.wait_for_event()
+        # if(len(events) != 0):
+        #     current_event = events[0]
+        # else:
+
+        current_event = sense.stick.wait_for_event()
         
         if(current_event.direction == 'right'):
             choice = 'like'
