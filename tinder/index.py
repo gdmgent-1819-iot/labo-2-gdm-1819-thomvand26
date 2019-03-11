@@ -17,16 +17,11 @@ def load_data():
 def save(name, choice, dataset):
   data = dataset
   if(choice == 'like'):
-    data['liked'].append(name)
+    data['liked'].append('x')
   else:
-    data['disliked'].append(name)
+    data['disliked'].append('y')
   with open('data.json', 'w') as outfile:
     json.dump(data, outfile)
-
-def like():
-	sense.set_pixel(0,0, [0,255,0])
-def dislike():
-	sense.set_pixel(0,0, [255,0,0])
 
 def get_user():
     global name
