@@ -5,8 +5,12 @@ from time import sleep
 import json
 
 sense = SenseHat()
-response = requests.get("https://randomuser.me/api/")
 sense.clear()
+response = requests.get("https://randomuser.me/api/")
+
+title = 't'
+first_name = 'f'
+last_name = 'l'
 
 jsonn = response.json()
 
