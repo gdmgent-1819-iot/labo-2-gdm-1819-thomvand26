@@ -22,11 +22,11 @@ def show_name():
     sense.show_message('test')
 
 def get_user():
-    response = requests.get("https://randomuser.me/api/")
+    global response = requests.get("https://randomuser.me/api/")
 
-    title = jsonn['results'][0]['name']['title']
-    first_name = jsonn['results'][0]['name']['first']
-    last_name = jsonn['results'][0]['name']['last']
+    global title = jsonn['results'][0]['name']['title']
+    global first_name = jsonn['results'][0]['name']['first']
+    global last_name = jsonn['results'][0]['name']['last']
 
 get_user()
 
