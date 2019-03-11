@@ -10,18 +10,20 @@ sense = SenseHat()
 sense.clear()
 
 def load_data():
-  with open('data.json') as json_data:
-    data = json.load(json_data)
-    return data
+    with open('data.json') as json_data:
+        data = json.load(json_data)
+        return data
 
 def save(name, choice, dataset):
-  data = dataset
-  if(choice == 'like'):
-    data['liked'].append(name)
-  else:
-    data['disliked'].append(name)
-  with open('data.json', 'w') as outfile:
-    json.dump(data, outfile)
+    data = dataset
+    if(choice == 'like'):
+        if 'liked' not in data:
+            data['liked'] = [name]
+        data['liked'].append(name)
+    else:
+        data['disliked'].append(name)
+    with open('data.json', 'w') as outfile:
+        json.dump(data, outfile)
     
 def get_user():
     global name
