@@ -34,6 +34,8 @@ def get_user():
     last_name = jsonn['results'][0]['name']['last']
 
     name = title + ' ' + first_name + ' ' + last_name
+    print('got user')
+
 
 
 while True:
@@ -43,6 +45,8 @@ while True:
         events = sense.stick.get_events()
 
         sense.show_message(name)
+        print('showing message')
+
 
         if(len(events) != 0):
             current_event = events[0]
