@@ -18,13 +18,13 @@ def like():
 def dislike():
 	sense.set_pixel(0,0, [255,0,0])
 def show_name():
-    sense.show_message('test', scroll_speed = 1.0)
+    sense.show_message('test')
 
 while True:
     try:
         # sense.stick.direction_right = like
         # sense.stick.direction_left = dislike
-        sense.stick.direction_any = show_name
+        show_name
         
     except KeyboardInterrupt:
         sense.clear()
