@@ -1,5 +1,6 @@
 from sense_hat import SenseHat
 import requests
+import json
 from random import randint
 from time import sleep
 import json
