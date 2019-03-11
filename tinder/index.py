@@ -10,18 +10,21 @@ sense.clear()
 
 data = json.loads(response)
 namen = data['first']
-sense.show_message(namen)
 
 
-def like ():
+
+def like():
 	sense.set_pixel(0,0, [0,255,0])
-def dislike ():
+def dislike():
 	sense.set_pixel(0,0, [255,0,0])
+def show_name():
+    sense.show_message(namen)
 
 while True:
     try:
         sense.stick.direction_right = like
         sense.stick.direction_left = dislike
+        sense.stick.direction_up = show_name
         
     except KeyboardInterrupt:
         sense.clear()
