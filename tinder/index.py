@@ -8,9 +8,11 @@ sense = SenseHat()
 response = requests.get("https://randomuser.me/api/")
 sense.clear()
 
-# json = json.loads(response)
+json = response.json()
 # namen = data['first']
-string = response.text
+title = json['results']['name']['title']
+first_name = json['results']['name']['first']
+last_name = json['results']['name']['last']
 
 
 
@@ -25,7 +27,7 @@ while True:
     try:
         # sense.stick.direction_right = like
         # sense.stick.direction_left = dislike
-        sense.show_message(string)
+        sense.show_message('${title} ${first_name} ${last_name}')
         
     except KeyboardInterrupt:
         sense.clear()
