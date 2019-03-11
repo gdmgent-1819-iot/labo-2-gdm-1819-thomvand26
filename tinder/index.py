@@ -11,19 +11,17 @@ sense.clear()
 
 def load_data():
     with open('data.json') as json_data:
-        # data = json.load(json_data)
         global data_file
         data_file = json.load(json_data)
 
 def save(name, choice):
-    # data = dataset
     global data_file
-    data_file['liked'].append(name)
-    # if(choice == 'like'):
-    # else:
-    #     data['disliked'].append(name)
-    # with open('data.json', 'w') as outfile:
-    #     json.dump(data, outfile)
+    if(choice == 'like'):
+        data_file['liked'].append(name)
+    else:
+        data_file['disliked'].append(name)
+    with open('data.json', 'w') as outfile:
+        json.dump(data_file, outfile)
     
 def get_user():
     global name
